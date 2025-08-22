@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    <!-- <h1 class="main-heading">Shopping Cart</h1> -->
+    <div id="cartPage" class="cart-container"></div>
+    <div class="button-container">
+        <div id="error-message" class="error-message" style="display: none; color: red;"></div>
+        <button id="proceed-to-pay" class="proceed-to-pay">Proceed To Pay</button>
+    </div>
+
+    <div id="addressTab" class="container address-container  p-4">
+        <h3 class="text-center text-dark">Address Details</h3>
+        <form id="addressForm" class="row g-2">
+            <!-- Name -->
+            <div class="col-12">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
+                <p id="name-error" class="text-danger"></p>
+            </div>
+
+            <!-- State Dropdown -->
+            <div class="col-md-12">
+                <label for="state" class="form-label">Select State:</label>
+                <select id="state" name="state" class="form-select">
+                    <option value="">Select State</option>
+                </select>
+                <p id="state-error" class="text-danger"></p>
+            </div>
+
+            <!-- City Dropdown -->
+            <div class="col-md-12">
+                <label for="city" class="form-label">Select City:</label>
+                <select id="city" name="city" class="form-select">
+                    <option value="">Select City</option>
+                </select>
+                <p id="city-error" class="text-danger"></p>
+            </div>
+
+            <!-- Pincode -->
+            <div class="col-12">
+                <label for="pincode" class="form-label">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" class="form-control" maxlength="6"
+                    placeholder="Enter 6-digit Pincode">
+                <p id="pincode-error" class="text-danger"></p>
+            </div>
+
+            <!-- House Number -->
+            <div class="col-12">
+                <label for="houseNumber" class="form-label">Flat, House no., Building, Company, Apartment:</label>
+                <input type="text" id="address1" name="houseNumber" class="form-control"
+                    placeholder="Enter House Number">
+                <p id="address1-error" class="text-danger"></p>
+            </div>
+
+            <!-- Street -->
+            <div class="col-12">
+                <label for="street" class="form-label">Area, Street, Sector, Village:</label>
+                <input type="text" id="address2" name="street" class="form-control" placeholder="Enter Street Name">
+                <p id="address2-error" class="text-danger"></p>
+            </div>
+
+            <!-- Landmark -->
+            <div class="col-12">
+                <label for="landmark" class="form-label">Landmark, Town/City:</label>
+                <input type="text" id="address3" name="landmark" class="form-control"
+                    placeholder="Enter Nearby Landmark">
+                <p id="address3-error" class="text-danger"></p>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-12">
+                <label for="contact" class="form-label">Contact Number:</label>
+                <input type="text" id="contact" name="contact" class="form-control" maxlength="10"
+                    placeholder="Enter 10-digit Contact Number">
+                <p id="contact-error" class="text-danger"></p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12">
+                <button id="backButton" class="back-button">Back</button>
+                <button id="summary-button" class="summary-btn">Summary</button>
+            </div>
+        </form>
+    </div>
+
+    <!--Summary-tab-->
+    <div id="summaryTab" class="container summary-container" style="display: none;">
+        <h2 class="summary-heading text-center">Order Summary</h2>
+        <div class="row">
+            <div id="summary-address" class="summary-address col-md-8">
+                <h4>Shipping Address</h4>
+            </div>
+
+            <div id="summary-cart" class="summary-cart col-md-4 ">
+            </div>
+        </div>
+        <button class="confirm-order-btn" onclick="showPopup()">Place Order</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="orderPopup" class="popup">
+        <div class="popup-content">
+            <h3>Order Confirmed!</h3>
+            <p>Your order has been placed successfully.</p>
+            <button onclick="redirectToHome()">OK</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./cart.js"></script>
+
+</body>
+
+</html>
